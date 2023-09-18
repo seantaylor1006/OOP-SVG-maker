@@ -1,7 +1,15 @@
 const inquirer = require('inquirer');
+const path = require('path');
 const fs = require('fs');
+const Square = require('./lib/shapes')
+const Circle = require('./lib/shapes')
+const Triangle = require('./lib/shapes')
 
-inquirer.createPromptModule([
+const makeCircle = ({Circle, color, text, textColor}) => (
+
+)
+
+inquirer.prompt([
     {
         type: 'list',
         name: 'shape',
@@ -18,9 +26,14 @@ inquirer.createPromptModule([
         name: 'text',
         message: 'type the 3 letters of your logo:'
     }
-]).then((Response) => {
-    console.log('creating logo');
-    fs.writeFileSync('logo.svc', constructLogo(Response)), err => {
-        err ? console.err(err) : console.log('Logo created')
+    {
+        type: 'input',
+        name: 'textColor',
+        message: 'type the color of your logo:'
     }
+]).then((Response) => {
+    console.log('Creating logo');
+    fs.writeFileSync('./examples/logo.svg', constructLogo(Response), err => {
+        err ? console.err(err) : console.log('Logo created')
+    });
 });
