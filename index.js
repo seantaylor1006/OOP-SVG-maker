@@ -1,11 +1,15 @@
 const inquirer = require('inquirer');
 const path = require('path');
 const fs = require('fs');
-const Square = require('./lib/shapes')
-const Circle = require('./lib/shapes')
-const Triangle = require('./lib/shapes')
+const {Square, Circle, Triangle} = require('./lib/shapes')
 
-const makeCircle = ({Circle, color, text, textColor}) => (
+
+const constructLogo = ({Shaping}) => (
+    `<svg version="1.1"
+    width="300" height="200"
+    xmlns="http://www.w3.org/2000/svg">
+    ${Shaping}
+    </svg>`
 
 )
 
@@ -25,7 +29,7 @@ inquirer.prompt([
         type: 'input',
         name: 'text',
         message: 'type the 3 letters of your logo:'
-    }
+    },
     {
         type: 'input',
         name: 'textColor',
