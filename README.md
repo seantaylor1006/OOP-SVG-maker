@@ -12,7 +12,7 @@
   * [Questions](##Questions)
   
   ## Installation
-  it requires node.js and inquirer 8.2.4
+  it requires node.js, inquirer 8.2.4, and jest
   ## Usage
   it's used to make logos quickly and efficiently
   ## License
@@ -21,7 +21,7 @@ https://opensource.org/license/MIT/
   ## Contributions
   N/A
   ## Tests
-  N/A
+  shapes.test.js, jest
   ## Questions
   Reach out to me at;
   * https://github.com/seantaylor1006
